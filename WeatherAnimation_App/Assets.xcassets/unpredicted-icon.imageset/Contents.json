@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "rain.png",
+      "filename" : "unpredicted-icon.png",
       "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "filename" : "rain@2x.png",
+      "filename" : "unpredicted-icon@2x.png",
       "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "filename" : "rain@3x.png",
+      "filename" : "unpredicted-icon@3x.png",
       "idiom" : "iphone",
       "scale" : "3x"
     }

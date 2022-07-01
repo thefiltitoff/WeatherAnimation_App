@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "rain.png",
+      "filename" : "snow.png",
       "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "filename" : "rain@2x.png",
+      "filename" : "snow@2x.png",
       "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "filename" : "rain@3x.png",
+      "filename" : "snow@3x.png",
       "idiom" : "iphone",
       "scale" : "3x"
     }
