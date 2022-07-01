@@ -17,6 +17,7 @@
 		2B6E76DB286F8D2600664FA3 /* IconWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6E76DA286F8D2600664FA3 /* IconWeatherManager.swift */; };
 		2B6E76DD286F994900664FA3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6E76DC286F994900664FA3 /* NetworkManager.swift */; };
 		2B6E76DF286F9CEE00664FA3 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6E76DE286F9CEE00664FA3 /* ErrorManager.swift */; };
+		2B6E76E2286FA1BE00664FA3 /* APIWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6E76E1286FA1BE00664FA3 /* APIWeatherManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2B6E76DA286F8D2600664FA3 /* IconWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconWeatherManager.swift; sourceTree = "<group>"; };
 		2B6E76DC286F994900664FA3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2B6E76DE286F9CEE00664FA3 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		2B6E76E1286FA1BE00664FA3 /* APIWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				2B6E76C6286F80CF00664FA3 /* SceneDelegate.swift */,
 				2B6E76C8286F80CF00664FA3 /* ViewController.swift */,
 				2B6E76DC286F994900664FA3 /* NetworkManager.swift */,
+				2B6E76E1286FA1BE00664FA3 /* APIWeatherManager.swift */,
 				2B6E76DE286F9CEE00664FA3 /* ErrorManager.swift */,
 				2B6E76CA286F80CF00664FA3 /* Main.storyboard */,
 				2B6E76E0286F9D0400664FA3 /* Model */,
@@ -165,6 +168,7 @@
 				2B6E76D9286F8C9800664FA3 /* CurrentWeather.swift in Sources */,
 				2B6E76C7286F80CF00664FA3 /* SceneDelegate.swift in Sources */,
 				2B6E76DB286F8D2600664FA3 /* IconWeatherManager.swift in Sources */,
+				2B6E76E2286FA1BE00664FA3 /* APIWeatherManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,8 +21,6 @@ protocol NetworkManager {
     var sessionConfiguration: URLSessionConfiguration { get }
     var session: URLSession { get }
     
-    init(sessionConfiguration: URLSessionConfiguration)
-    
     func JSONTask(with request: URLRequest, completionHandler: @escaping JSONCompletionHandler) -> JSONTask
     func fetch<T>(request: URLRequest, parse: @escaping ([String: AnyObject]) -> T?, completionHandler: @escaping (APIResult<T>) -> Void)
 }
