@@ -23,6 +23,66 @@ protocol NetworkManager {
     
     init(sessionConfiguration: URLSessionConfiguration)
     
-    func JSONTask(with request: URLRequest, completionHandler: JSONCompletionHandler) -> JSONTask
-    func fetch<T>(request: URLRequest, parse: ([String: AnyObject]) -> T?, completionHandler: (APIResult<T>) -> Void)
+    func JSONTask(with request: URLRequest, completionHandler: @escaping JSONCompletionHandler) -> JSONTask
+    func fetch<T>(request: URLRequest, parse: @escaping ([String: AnyObject]) -> T?, completionHandler: @escaping (APIResult<T>) -> Void)
+}
+
+extension NetworkManager {
+    func JSONTask(with request: URLRequest, completionHandler: @escaping JSONCompletionHandler) -> JSONTask {
+        let dataTask = session.dataTask(with: request) { data, response, error in
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                let userInfo = [NSLocalizedDescriptionKey: NSLocalizedString("Missing HTTP Response", comment: "")]
+                let error = NSError(
+                    domain: theNetworkinfError,
+                    code: missingHTTPResponseError, userInfo: userInfo
+                )
+                
+                completionHandler(nil, nil, error)
+                
+                return
+            }
+            
+            if data == nil {
+                if let error = error {
+                    completionHandler(nil, httpResponse, error)
+                } else {
+                    switch httpResponse.statusCode {
+                    case 200:
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: AnyObject]
+                            completionHandler(json, httpResponse, nil)
+                        } catch let error as NSError {
+                            print(error.localizedDescription)
+                            completionHandler(nil, httpResponse, error)
+                        }
+                    default:
+                        print("\(httpResponse.statusCode)")
+                    }
+                }
+            }
+        }
+        
+        return dataTask
+    }
+    
+    func fetch<T>(request: URLRequest, parse: @escaping ([String: AnyObject]) -> T?, completionHandler: @escaping (APIResult<T>) -> Void) {
+        let dataTask = JSONTask(with: request) { json, response, error in
+            guard let json = json else {
+                if let error = error {
+                    completionHandler(.failure(error))
+                }
+                return
+            }
+            
+            if let value = parse(json) {
+                completionHandler(.success(value))
+                
+            } else {
+                let error = NSError(domain: theNetworkinfError, code: unexpectedResponseError, userInfo: nil)
+                completionHandler(.failure(error))
+            }
+        }
+        dataTask.resume()
+    }
 }
