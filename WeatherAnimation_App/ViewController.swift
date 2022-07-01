@@ -8,8 +8,9 @@
 
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -20,12 +21,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    let locationManager = CLLocationManager()
+    
     lazy var weathermanager = APIWeatherManager(apiKey: "2a6d8e376a69c1ae07d4a52dd0c2dfdc")
     private let coordenates = Coordinates(latitude: 55.763263176658945, longitude: 37.57317109423536)
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        getCurrentWeatherData()
+      super.viewDidLoad()
+      
+      locationManager.delegate = self
+      locationManager.desiredAccuracy = kCLLocationAccuracyBest
+      locationManager.requestAlwaysAuthorization()
+      locationManager.startUpdatingLocation()
+      
+      getCurrentWeatherData()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+      let userLocation = locations.last! as CLLocation
+      
+      print("my locayion latitude: \(userLocation.coordinate.latitude), longitude: \(userLocation.coordinate.longitude)")
     }
     
     private func getCurrentWeatherData() {
