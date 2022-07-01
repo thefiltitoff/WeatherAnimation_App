@@ -18,13 +18,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var appearentTemperatureLabel: UILabel!
     @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     lazy var weathermanager = APIWeatherManager(apiKey: "2a6d8e376a69c1ae07d4a52dd0c2dfdc")
     private let coordenates = Coordinates(latitude: 55.763263176658945, longitude: 37.57317109423536)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getCurrentWeatherData()
+    }
+    
+    private func getCurrentWeatherData() {
         weathermanager.fetchCurrentWeatherWith(coordinates: coordenates) { result in
+            
+            self.toggleActivityIndicator(on: false)
             switch result {
                 
             case .Success(let currentWeather):
@@ -58,7 +65,19 @@ class ViewController: UIViewController {
         
     }
     
+    private func toggleActivityIndicator(on: Bool) {
+        refreshButton.isHidden = on
+        
+        if on {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+    }
+    
     @IBAction func refreshButtonTapped(_ sender: UIButton) {
+        toggleActivityIndicator(on: true)
+        getCurrentWeatherData()
     }
 }
 

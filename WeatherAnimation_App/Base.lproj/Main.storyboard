@@ -41,13 +41,16 @@
                                         <rect key="frame" x="0.0" y="179.5" width="288" height="34.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="740 mm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmS-1x-aKn">
-                                                <rect key="frame" x="0.0" y="0.0" width="144" height="34.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="34.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="pWN-8v-Wgq">
+                                                <rect key="frame" x="96" y="0.0" width="96" height="34.5"/>
+                                            </activityIndicatorView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icx-6G-0sN">
-                                                <rect key="frame" x="144" y="0.0" width="144" height="34.5"/>
+                                                <rect key="frame" x="192" y="0.0" width="96" height="34.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -105,7 +108,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.020833816379308701" green="0.83975666761398315" blue="0.95887619256973267" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.68514388799667358" green="0.87412184476852417" blue="0.99686795473098755" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="IKC-Qb-Sz3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="MpN-Qf-Ugg"/>
                             <constraint firstItem="IKC-Qb-Sz3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fOQ-eM-T87"/>
@@ -114,6 +117,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="pWN-8v-Wgq" id="zuY-2H-Nfp"/>
                         <outlet property="appearentTemperatureLabel" destination="SSq-c8-PnH" id="7w2-E4-QkD"/>
                         <outlet property="hummidityLabel" destination="icx-6G-0sN" id="zOc-wc-N9c"/>
                         <outlet property="imageView" destination="X0f-Qa-dca" id="cdl-nP-ox3"/>
