@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let icon = IconWeatherManager.Rain.image
-        let weather = CurrentWeather(temperature: 10.0, appearentTemperature: 5.0, hummidity: 30, pressure: 250, image: icon)
+        let weather = CurrentWeather(temperature: 10.0, apparentTemperature: 5.0, hummidity: 30, pressure: 250, image: icon)
         updateUI(with: weather)
         
 //        let urlString = "https://api.forecast.io/forecast/2a6d8e376a69c1ae07d4a52dd0c2dfdc/37.8267,-122.423"

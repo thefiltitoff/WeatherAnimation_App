@@ -17,12 +17,22 @@ enum APIResult<T> {
     case failure(Error)
 }
 
+protocol JSONDecodable {
+    init?(json: [String: AnyObject])
+}
+
+protocol FinalURLPoint {
+    var baseUrl: URL { get }
+    var path: String { get }
+    var request: URLRequest { get }
+}
+
 protocol NetworkManager {
     var sessionConfiguration: URLSessionConfiguration { get }
     var session: URLSession { get }
     
     func JSONTask(with request: URLRequest, completionHandler: @escaping JSONCompletionHandler) -> JSONTask
-    func fetch<T>(request: URLRequest, parse: @escaping ([String: AnyObject]) -> T?, completionHandler: @escaping (APIResult<T>) -> Void)
+    func fetch<T: JSONDecodable>(request: URLRequest, parse: @escaping ([String: AnyObject]) -> T?, completionHandler: @escaping (APIResult<T>) -> Void)
 }
 
 extension NetworkManager {
