@@ -95,6 +95,9 @@
                                                 <state key="normal" image="arrow.triangle.2.circlepath" catalog="system">
                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="refreshButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rwP-Fp-tSK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -102,7 +105,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.18910000000000002" green="0.18910000000000002" blue="0.60999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.020833816379308701" green="0.83975666761398315" blue="0.95887619256973267" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="IKC-Qb-Sz3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="MpN-Qf-Ugg"/>
                             <constraint firstItem="IKC-Qb-Sz3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fOQ-eM-T87"/>
@@ -110,6 +113,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IKC-Qb-Sz3" secondAttribute="trailing" constant="16" id="qil-R4-av0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="appearentTemperatureLabel" destination="SSq-c8-PnH" id="7w2-E4-QkD"/>
+                        <outlet property="hummidityLabel" destination="icx-6G-0sN" id="zOc-wc-N9c"/>
+                        <outlet property="imageView" destination="X0f-Qa-dca" id="cdl-nP-ox3"/>
+                        <outlet property="locationLabel" destination="p3o-Yv-KYq" id="bX9-0Y-fRw"/>
+                        <outlet property="pressureLabel" destination="KmS-1x-aKn" id="2kD-LH-UIP"/>
+                        <outlet property="refreshButton" destination="2yU-Bk-Ixt" id="Sn7-qm-dRr"/>
+                        <outlet property="temperatureLabel" destination="QOX-BW-bh3" id="SSG-W0-JX9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
