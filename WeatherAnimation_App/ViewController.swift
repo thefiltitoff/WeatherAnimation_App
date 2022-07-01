@@ -23,11 +23,22 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let icon = IconWeatherManager.Rain.image
+        let weather = CurrentWeather(temperature: 10.0, appearentTemperature: 5.0, hummidity: 30, pressure: 250, image: icon)
+        updateUI(with: weather)
+    }
+    
+    private func updateUI(with currentWeather: CurrentWeather) {
+        imageView.image = currentWeather.image
+        pressureLabel.text = currentWeather.pressureString
+        hummidityLabel.text = currentWeather.hummidityString
+        temperatureLabel.text = currentWeather.temperatureString
+        appearentTemperatureLabel.text = currentWeather.appearentTemperatureString
+
+        
     }
 
     @IBAction func refreshButtonTapped(_ sender: UIButton) {
     }
-    
 }
 

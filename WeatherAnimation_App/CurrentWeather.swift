@@ -17,3 +17,21 @@ struct CurrentWeather {
     let image: UIImage
     
 }
+
+extension CurrentWeather {
+    var pressureString: String {
+        "\(Int(pressure)) mm"
+    }
+    
+    var hummidityString: String {
+        "\(Int(hummidity))%"
+    }
+    
+    var temperatureString: String {
+        "\(Int(temperature))˚C"
+    }
+    
+    var appearentTemperatureString: String {
+        "\(Int(appearentTemperature))˚C"
+    }
+}
