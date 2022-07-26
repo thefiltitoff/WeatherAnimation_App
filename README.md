@@ -1,6 +1,6 @@
 # WeatherAnimation_App
 
-Thi is prototype of my future project with weather. ☀️🌦💨<br/>
+This is prototype of my future project with weather. ☀️🌦💨<br/>
 Now it works with many code style errors with old conceptions of Swift, getting in old tutorial. <br />
 
 This time Forecast API is declared. I'll be use Apple Weather Kit, after release and buying Apple Developer Subscription.<br />
